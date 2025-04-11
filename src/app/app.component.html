@@ -9,7 +9,7 @@
     <!-- City selection component for trip planning -->
     <app-city-selector (tripPoints)="onTripPoints($event)" (resetVisualizerEvent)="tripVisualizer.resetVisualizer()" />
     <!-- Trip visualization section, only shown when trip points are available -->
-    <div class="mt-2 p-1">
+    <div class="mt-6 p-1">
       <app-trip-visualizer #tripVisualizer [tripPoints]="tripPoints" />
     </div>
     <!-- Router outlet for nested views -->
