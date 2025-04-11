@@ -2,26 +2,41 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.18.
 
-## Development server
+## Problem Statement
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Create an application with the following functionality:
 
-## Code scaffolding
+- **Input fields**: Start Point and End Point.
+- **Design**: Display the first three characters of the starting point and ending point.
+- **Functionality**:
+  - If it’s a continued trip (e.g., Bangalore to Chennai, Chennai to Ooty), then the straight line should be on level 1.
+  - If it’s not a continued trip (e.g., Bangalore to Chennai, Ooty to Bangalore), then the straight line should have an arrow and be on level 1.
+  - If consecutive trips have the same pickup and drop location, then those should be in Level 2.
+  - Any number of trips can be added, and the design should respond accordingly to adjust within the defined dimension.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## Project Information
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Angular Version
+This project uses **Angular CLI version 18.2.18**.
 
-## Running unit tests
+### Node Version
+Ensure you have **Node.js version 16.x or higher** installed.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Development Server
+To serve the application locally:
+1. Run `npm install` to install dependencies.
+2. Run `ng serve` to start the development server.
+3. Navigate to `http://localhost:4200/` in your browser. The application will automatically reload if you change any source files.
 
-## Running end-to-end tests
+### Build
+To build the project, run:
+```
+ng build
+```
+The build artifacts will be stored in the `dist/` directory.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Deployment
+The application is deployed and can be accessed at:
+[https://cjtransportsimple.netlify.app/](https://cjtransportsimple.netlify.app/)
