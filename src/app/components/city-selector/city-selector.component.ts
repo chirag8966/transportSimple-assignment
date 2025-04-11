@@ -30,6 +30,7 @@ export class CitySelectorComponent {
     },
   ];
   @Output() tripPoints: EventEmitter<{ start: string; end: string }> = new EventEmitter();
+  @Output() resetVisualizerEvent: EventEmitter<void> = new EventEmitter();
 
   addToTrip(event: Event) {
     event.preventDefault();
@@ -48,8 +49,18 @@ export class CitySelectorComponent {
     });
   }
 
+  resetVisualizer() {
+    this.resetVisualizerEvent.emit();
+  }
+
   shiftInputFocus() {
     const startInput = document.getElementById('startPoint');
     startInput?.focus();
+  }
+
+  completeReset() {
+    this.resetForm(); 
+    this.resetVisualizer(); 
+    this.shiftInputFocus();
   }
 }
