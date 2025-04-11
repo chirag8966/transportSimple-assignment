@@ -1,15 +1,16 @@
 <!-- Main container with theme support -->
 <div
-  class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300"
+  class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 md:min-h-0"
 >
   <div class="container mx-auto px-4 py-8">
     <!-- Theme toggle component -->
     <app-theme />
+    <app-problem-statement />
     <!-- City selection component for trip planning -->
-    <app-city-selector (tripPoints)="onTripPoints($event)" />
+    <app-city-selector (tripPoints)="onTripPoints($event)" (resetVisualizerEvent)="tripVisualizer.resetVisualizer()" />
     <!-- Trip visualization section, only shown when trip points are available -->
-    <div class="mt-8 p-4">
-      <app-trip-visualizer [tripPoints]="tripPoints" />
+    <div class="mt-2 p-1">
+      <app-trip-visualizer #tripVisualizer [tripPoints]="tripPoints" />
     </div>
     <!-- Router outlet for nested views -->
     <router-outlet />

@@ -23,8 +23,8 @@ export class TripVisualizerComponent implements AfterViewInit, OnDestroy {
   };
 
   private drawing: DrawingConfig = {
-    initialX: 100,
-    initialY: 300,
+    initialX: 100, 
+    initialY: 300, 
     lineLength: 250,
     circleDiff: 10,
     isUpper: false
@@ -82,7 +82,7 @@ export class TripVisualizerComponent implements AfterViewInit, OnDestroy {
 
     // Get the container's dimensions
     const containerWidth = container.clientWidth;
-    const containerHeight = container.clientHeight;
+    const containerHeight = container.clientHeight / 2;
 
     // Set canvas dimensions to match container
     this.renderer.setAttribute(canvas, 'width', containerWidth.toString());
@@ -305,7 +305,12 @@ export class TripVisualizerComponent implements AfterViewInit, OnDestroy {
 
       // Draw the text
       this.canvas.ctx.fillStyle = pointColor;
-      this.canvas.ctx.fillText(point.text, point.x - 10, point.y + 20, 50);
+      this.canvas.ctx.textAlign = 'center'; // Center align the text
+      this.canvas.ctx.fillText(
+        point.text,
+        point.x, // Center the text horizontally
+        point.y - 10 // Position the text above the dot
+      );
 
       // Reset fill style to default
       this.canvas.ctx.fillStyle = 'black';
@@ -627,6 +632,30 @@ export class TripVisualizerComponent implements AfterViewInit, OnDestroy {
         ...this.state.drawPoints,
         { x, y, text, isConnected, startPoint, endPoint }
       ]
+    };
+  }
+
+  /**
+   * Resets the canvas and all trip-related variables
+   */
+  resetVisualizer() {
+    if (this.canvas.ctx) {
+      const canvas = this.canvasRef.nativeElement;
+      this.canvas.ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    this.state = {
+      travels: [],
+      drawPoints: [],
+      colorMap: []
+    };
+
+    this.drawing = {
+      initialX: 0,
+      initialY: 0,
+      lineLength: 70,
+      circleDiff: 10,
+      isUpper: false
     };
   }
 }
