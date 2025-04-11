@@ -1,0 +1,27 @@
+<div
+  class="bg-white dark:bg-gray-800 rounded-lg px-6 py-4 ring shadow-xl ring-gray-900/5"
+>
+  <h3
+    class="text-gray-900 dark:text-white text-base font-medium tracking-tight mb-4"
+  >
+    Enter City Details
+  </h3>
+  <form (submit)="addToTrip($event)">
+    <div class="grid gap-6 mb-6 md:grid-cols-2">
+      @for (field of inputFieldConfig; track field.label) {
+      <app-input-field
+        [label]="field.label"
+        [id]="field.id"
+        [placeholder]="field.placeholder"
+        [type]="field.type"
+        [required]="field.required"
+        [(value)]="field.value"
+      />
+      }
+    </div>
+    <div class="flex gap-4">
+      <app-button type="submit" label="Add to Trip" />
+      <app-button type="reset" label="Reset" (click)="resetForm()" />
+    </div>
+  </form>
+</div>

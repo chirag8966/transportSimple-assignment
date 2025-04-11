@@ -1,3 +1,17 @@
-<h1 class="text-3xl font-bold">
-  Hello world!
-</h1>
+<!-- Main container with theme support -->
+<div
+  class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300"
+>
+  <div class="container mx-auto px-4 py-8">
+    <!-- Theme toggle component -->
+    <app-theme />
+    <!-- City selection component for trip planning -->
+    <app-city-selector (tripPoints)="onTripPoints($event)" />
+    <!-- Trip visualization section, only shown when trip points are available -->
+    <div class="mt-8 p-4">
+      <app-trip-visualizer [tripPoints]="tripPoints" />
+    </div>
+    <!-- Router outlet for nested views -->
+    <router-outlet />
+  </div>
+</div>
