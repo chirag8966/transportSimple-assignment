@@ -6,6 +6,26 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 link -   https://www.loom.com/share/c5972491c1bc436c89b16909a8108f1e?sid=f71c09d6-84b5-4292-9f4e-0f2a9623c8e9
 
+# Higlights
+
+Here are the key highlights of the project, transportSimple-assignment:​
+
+- Framework: Built with Angular CLI version 18.2.18, the latest Long-Term Support (LTS) version at the time of development.​
+
+- Deployment: Securely deployed using Netlify, accessible at cjtransportsimple.netlify.app.​
+
+- Commit Standards: Employed conventional commits to maintain a clear and consistent commit history.​
+
+- Component Design: Focused on reusability, ensuring components are modular and maintainable.​
+
+- Styling: Utilized Tailwind CSS for efficient and responsive UI design.​
+
+- Code Quality: Included configuration files like .editorconfig to enforce consistent coding styles across different editors and IDEs.​
+
+- Project Structure: Organized using Angular's standard project structure, promoting scalability and ease of navigation.​
+
+- For a visual walkthrough of the application, refer to the [loom video](https://www.loom.com/share/c5972491c1bc436c89b16909a8108f1e?sid=f71c09d6-84b5-4292-9f4e-0f2a9623c8e9).
+
 ## Problem Statement
 
 Create an application with the following functionality:
