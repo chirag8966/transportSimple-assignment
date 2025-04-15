@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.18.
 
+# Application Walkthrough
+
+link -   https://www.loom.com/share/c5972491c1bc436c89b16909a8108f1e?sid=f71c09d6-84b5-4292-9f4e-0f2a9623c8e9
+
 ## Problem Statement
 
 Create an application with the following functionality:
